@@ -19,13 +19,12 @@ const Product = () => {
     fetchFatakaList();
   }, []);
   const { id } = useParams();
-  const [selectedProduct, setSelectedProduct] = useState(
-    fatakaList.filter((item) => item.id === id)[0]
-  );
+  const [selectedProduct, setSelectedProduct] = useState({});
   useEffect(() => {
     window.scrollTo(0, 0);
-    setSelectedProduct(fatakaList.filter((item) => item.id === id)[0]);
-  }, [selectedProduct, id]);
+    let selectedItem = fatakaList.filter((item) => item.id === parseInt(id))[0];
+    setSelectedProduct(selectedItem);
+  }, [fatakaList, id]);
 
   useWindowScrollToTop();
 

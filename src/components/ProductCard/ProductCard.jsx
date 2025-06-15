@@ -12,7 +12,6 @@ const ProductCard = ({ title, productItem }) => {
     router(`/shop/${productItem.id}`);
   };
   const handelAdd = (productItem) => {
-    console.log('productItem: ', productItem);
     dispatch(addToCart({ product: productItem, num: 1 }));
     toast.success("Product has been added to cart!");
   };
@@ -24,12 +23,12 @@ const ProductCard = ({ title, productItem }) => {
       <img
         loading="lazy"
         onClick={() => handelClick()}
-        src={productItem.imgUrl}
+        src={productItem.imageUrl}
         alt=""
       />
-      <div className="product-like">
+      {/* <div className="product-like">
         <ion-icon name="heart-outline"></ion-icon>
-      </div>
+      </div> */}
       <div className="product-details">
         <h3 onClick={() => handelClick()}>{productItem.name}</h3>
         <div className="rate">

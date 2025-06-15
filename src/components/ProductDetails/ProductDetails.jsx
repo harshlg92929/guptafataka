@@ -13,7 +13,6 @@ const ProductDetails = ({ selectedProduct }) => {
     setQuantity(e.target.value);
   };
   const handelAdd = (selectedProduct, quantity) => {
-    console.log('selectedProduct: ', selectedProduct);
     dispatch(addToCart({ product: selectedProduct, num: quantity }));
     toast.success("Product has been added to cart!");
   };
@@ -22,11 +21,11 @@ const ProductDetails = ({ selectedProduct }) => {
     <section className="product-page">
       <Container>
         <Row className="justify-content-center">
-          <Col md={6}>
-            <img loading="lazy" src={selectedProduct?.imgUrl} alt="" />
+          <Col md={2}>
+            <img loading="lazy" src={selectedProduct?.imageUrl} alt="" width={300} height={300} />
           </Col>
           <Col md={6}>
-            <h2>{selectedProduct?.productName}</h2>
+            <h2>{selectedProduct?.name}</h2>
             <div className="rate">
               <div className="stars">
                 <i className="fa fa-star"></i>
@@ -39,9 +38,9 @@ const ProductDetails = ({ selectedProduct }) => {
             </div>
             <div className="info">
               <span className="price">₹{selectedProduct?.price}</span>
-              <span>category:{selectedProduct?.category}</span>
             </div>
-            <p>{selectedProduct?.shortDesc}</p>
+              <span>category:{selectedProduct?.category}</span>
+            <p></p>
             <input
               className="qty-input"
               type="number"

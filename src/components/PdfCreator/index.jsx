@@ -38,8 +38,17 @@ const GeneratePdf = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleDownload}>Download PDF</button>
+    <div
+      style={{
+        width: "65%",
+        display: "flex",
+        alignItems: "flex-end",
+        justifyContent: "flex-end",
+      }}
+    >
+      <button className="incCart p-2" onClick={() => handleDownload()}>
+        <i className="fa-solid fa-download"></i> Download List
+       </button>
     </div>
   );
 };

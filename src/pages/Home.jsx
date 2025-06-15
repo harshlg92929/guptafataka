@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import Section from "../components/Section";
-import { fetchFataka } from "./../firebase";
+import { fetchFataka, updateCategory, uploadFatakaData } from "./../firebase";
 import useWindowScrollToTop from "../hooks/useWindowScrollToTop";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -26,6 +26,14 @@ const Home = () => {
         bgColor="white"
         productItems={newArrivalData}
       />
+      {/* <button
+        onClick={() => {
+          uploadFatakaData();
+          updateCategory();
+        }}
+      >
+        Add
+      </button> */}
     </Fragment>
   );
 };

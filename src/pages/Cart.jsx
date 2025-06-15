@@ -7,7 +7,6 @@ import {
   deleteProduct,
 } from "../app/features/cart/cartSlice";
 import GeneratePdf from "../components/PdfCreator";
-import { uploadFatakaData } from "../firebase";
 
 const Cart = () => {
   const { cartList } = useSelector((state) => state.cart);
@@ -24,7 +23,7 @@ const Cart = () => {
     //   setCartItem(JSON.parse(storedCart));
     // }
   }, []);
-  console.log('cartList: ', cartList);
+
   return (
     <section className="cart-items">
       <Container>
@@ -39,7 +38,7 @@ const Cart = () => {
                 <div className="cart-list" key={item.id}>
                   <Row>
                     <Col className="image-holder" sm={4} md={3}>
-                      <img src={item.imgUrl} alt="" />
+                      <img src={item.imageUrl} alt="" />
                     </Col>
                     <Col sm={8} md={9}>
                       <Row className="cart-content justify-content-center">
@@ -90,7 +89,6 @@ const Cart = () => {
           </Col>
         </Row>
         <GeneratePdf />
-        {/* <button onClick={uploadFatakaData}>Test</button> */}
       </Container>
     </section>
   );

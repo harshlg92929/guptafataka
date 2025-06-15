@@ -39,9 +39,13 @@ const FilterSelect = ({ setFilterList }) => {
   };
 
   const handleChange = (selectedOption) => {
-    setFilterList(
-      fatakaList.filter((item) => item.category === selectedOption.value)
-    );
+    if (selectedOption.value === "All") {
+      setFilterList(fatakaList);
+    } else {
+      setFilterList(
+        fatakaList.filter((item) => item.category === selectedOption.value)
+      );
+    }
   };
 
   const fetchCategoryList = async () => {
