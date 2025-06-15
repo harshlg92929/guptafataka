@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/guptafataka/static/css/main.720cd7f9.css",
-    "main.js": "/guptafataka/static/js/main.ee04fbc6.js",
+    "main.js": "/guptafataka/static/js/main.c498dd26.js",
     "static/css/97.d3c9de5f.chunk.css": "/guptafataka/static/css/97.d3c9de5f.chunk.css",
     "static/js/97.83ecc849.chunk.js": "/guptafataka/static/js/97.83ecc849.chunk.js",
     "static/css/648.28ebc7c8.chunk.css": "/guptafataka/static/css/648.28ebc7c8.chunk.css",
@@ -45,7 +45,7 @@
     "static/media/watch-07.png": "/guptafataka/static/media/watch-07.ab34f22bd9bf81f6c7b7.png",
     "index.html": "/guptafataka/index.html",
     "main.720cd7f9.css.map": "/guptafataka/static/css/main.720cd7f9.css.map",
-    "main.ee04fbc6.js.map": "/guptafataka/static/js/main.ee04fbc6.js.map",
+    "main.c498dd26.js.map": "/guptafataka/static/js/main.c498dd26.js.map",
     "97.d3c9de5f.chunk.css.map": "/guptafataka/static/css/97.d3c9de5f.chunk.css.map",
     "97.83ecc849.chunk.js.map": "/guptafataka/static/js/97.83ecc849.chunk.js.map",
     "648.28ebc7c8.chunk.css.map": "/guptafataka/static/css/648.28ebc7c8.chunk.css.map",
@@ -64,6 +64,6 @@
   },
   "entrypoints": [
     "static/css/main.720cd7f9.css",
-    "static/js/main.ee04fbc6.js"
+    "static/js/main.c498dd26.js"
   ]
 }
