@@ -19,7 +19,7 @@
 
 .product {
     background: #fff;
-    padding: 20px;
+    padding: 15px;
     position: relative;
     border-radius: 8px;
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
@@ -47,8 +47,20 @@
 }
 
 .price h4 {
-    margin: 20px 0 10px;
+    /* margin: 20px 0 10px; */
+    padding-right: 10px;
+    cursor: pointer;
 }
+
+.minQty {
+    display: flex;
+    flex-direction: column;
+}
+
+.minQty span {
+    font-size: 12px;
+}
+
 
 .price button {
     background: none;
@@ -71,8 +83,13 @@ button.add {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
-    border-radius: 50%;
+    font-size: 20px;
+    border-radius: 10%;
+}
+
+button.disabled {
+    color: 'grey';
+    border-radius: 10%;
 }
 
 .product-like {

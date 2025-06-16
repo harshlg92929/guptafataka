@@ -21,12 +21,12 @@ const ProductDetails = ({ selectedProduct }) => {
     <section className="product-page">
       <Container>
         <Row className="justify-content-center">
-          <Col md={2}>
+          {/* <Col md={2}>
             <img loading="lazy" src={selectedProduct?.imageUrl} alt="" width={300} height={300} />
-          </Col>
+          </Col> */}
           <Col md={6}>
             <h2>{selectedProduct?.name}</h2>
-            <div className="rate">
+            {/* <div className="rate">
               <div className="stars">
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star"></i>
@@ -35,11 +35,11 @@ const ProductDetails = ({ selectedProduct }) => {
                 <i className="fa fa-star"></i>
               </div>
               <span>{selectedProduct?.avgRating} ratings</span>
-            </div>
+            </div> */}
             <div className="info">
               <span className="price">₹{selectedProduct?.price}</span>
             </div>
-              <span>category:{selectedProduct?.category}</span>
+              <span> Category: {selectedProduct?.category}</span>
             <p></p>
             <input
               className="qty-input"

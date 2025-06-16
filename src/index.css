@@ -147,13 +147,13 @@ button {
   font-weight: 500;
   width: fit-content;
   text-align: center;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .cart-items .cart-details h4 {
   font-size: 15px;
   font-weight: 400;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   color: grey;
   width: fit-content;
 }
@@ -173,6 +173,7 @@ button {
   display: flex;
   gap: 5px;
   justify-content: center;
+  align-items: center;
   padding: 0 !important;
   margin: 20px 0 0;
 }

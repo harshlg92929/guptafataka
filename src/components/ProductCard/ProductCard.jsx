@@ -2,8 +2,8 @@ import { Col } from "react-bootstrap";
 import "./product-card.css";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../app/features/cart/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, decreaseQty } from "../../app/features/cart/cartSlice";
 
 const ProductCard = ({ title, productItem }) => {
   const dispatch = useDispatch();
@@ -15,39 +15,73 @@ const ProductCard = ({ title, productItem }) => {
     dispatch(addToCart({ product: productItem, num: 1 }));
     toast.success("Product has been added to cart!");
   };
+
+  const { cartList } = useSelector((state) => state.cart);
+
+  let isItemSelected = cartList.filter(
+    (item) => item.id === productItem.id
+  )?.[0];
+
   return (
-    <Col md={3} sm={5} xs={10} className="product mtop">
-      {title === "Big Discount" ? (
+    <Col md={4} sm={12} xs={12} className="product mtop">
+      {/* {title === "Big Discount" ? (
         <span className="discount">{productItem.discount}% Off</span>
-      ) : null}
-      <img
+      ) : null} */}
+      {/* <img
         loading="lazy"
         onClick={() => handelClick()}
         src={productItem.imageUrl}
         alt=""
-      />
+      /> */}
       {/* <div className="product-like">
         <ion-icon name="heart-outline"></ion-icon>
       </div> */}
       <div className="product-details">
-        <h3 onClick={() => handelClick()}>{productItem.name}</h3>
-        <div className="rate">
+        {/* <div className="rate">
           <i className="fa fa-star"></i>
           <i className="fa fa-star"></i>
           <i className="fa fa-star"></i>
           <i className="fa fa-star"></i>
           <i className="fa fa-star"></i>
-        </div>
+        </div> */}
         <div className="price">
-          <h4>₹{productItem.price}</h4>
-          <button
-            aria-label="Add"
-            type="submit"
-            className="add"
-            onClick={() => handelAdd(productItem)}
-          >
-            <ion-icon name="add"></ion-icon>
-          </button>
+          <div className="minQty">
+            <h4 onClick={() => handelClick()}>{productItem.name}</h4>
+            <span onClick={() => handelClick()}>
+              Minimum Qty: {productItem.minQuantity}
+            </span>
+          </div>
+          <div className="price">
+            <h4>₹{productItem.price}</h4>
+
+            <Col xs={12} sm={3} className="cartControl">
+              <button
+                // disabled={!isItemSelected}
+                className={isItemSelected ? "add" : "disabled"}
+                onClick={() =>
+                  dispatch(addToCart({ product: productItem, num: 1 }))
+                }
+              >
+                <i className="fa-solid fa-plus"></i>
+              </button>
+              {isItemSelected?.qty}
+              <button
+                disabled={!isItemSelected}
+                className={isItemSelected ? "add" : "disabled"}
+                onClick={() => dispatch(decreaseQty(productItem))}
+              >
+                <i className="fa-solid fa-minus"></i>
+              </button>
+            </Col>
+            {/* <button
+              aria-label="Add"
+              type="submit"
+              className="add"
+              onClick={() => handelAdd(productItem)}
+            >
+              <ion-icon name="add"></ion-icon>
+            </button> */}
+          </div>
         </div>
       </div>
     </Col>

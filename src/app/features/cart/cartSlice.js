@@ -22,7 +22,11 @@ export const cartSlice = createSlice({
       if (productExit) {
         state.cartList = state?.cartList?.map((item) =>
           item?.id === action?.payload?.product?.id
-            ? { ...productExit, qty: productExit?.qty + action?.payload?.num }
+            ? {
+                ...productExit,
+                qty:
+                  parseInt(productExit?.qty) + parseInt(action?.payload?.num),
+              }
             : item
         );
       } else {
