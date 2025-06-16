@@ -37,10 +37,22 @@ const GeneratePdf = () => {
     doc.save("CrakersList.pdf");
   };
 
+  const handleWhatsAppShare = () => {
+    const message = cartList
+      .map(
+        (p) =>
+          `🎆 ${p.name} (${p.category})\nRate: ₹${p.price}\Quantity: ${p.qty}\n`
+      )
+      .join("\n");
+
+    const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  };
+
   return (
     <div
       style={{
-        width: "65%",
+        width: "100%",
         display: "flex",
         alignItems: "flex-end",
         justifyContent: "flex-end",
@@ -48,7 +60,10 @@ const GeneratePdf = () => {
     >
       <button className="incCart p-2" onClick={() => handleDownload()}>
         <i className="fa-solid fa-download"></i> Download List
-       </button>
+      </button>
+      <button className="incCart p-2 mx-2" onClick={() => handleWhatsAppShare()}>
+        <i className="fa-solid fa-download"></i> Send to Whatsapp
+      </button>
     </div>
   );
 };

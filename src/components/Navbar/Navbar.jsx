@@ -30,7 +30,7 @@ const NavBar = () => {
     >
       <Container className="navbar-container">
         <Navbar.Brand to="/">
-          <ion-icon name="bag"></ion-icon>
+          <ion-icon name="color-palette-outline"></ion-icon>
           <h1 className="logo">Gupta Fataka</h1>
         </Navbar.Brand>
         {/* Media cart and toggle */}

@@ -30,7 +30,9 @@ const Cart = () => {
         <Row className="justify-content-center">
           <Col md={8}>
             {cartList.length === 0 && (
-              <h1 className="no-items product">No Items are add in Cart</h1>
+              <h1 className="no-items product">
+                No Items are available in the cart
+              </h1>
             )}
             {cartList.map((item) => {
               const productQty = item.price * item.qty;
@@ -58,6 +60,7 @@ const Cart = () => {
                           >
                             <i className="fa-solid fa-plus"></i>
                           </button>
+                          {item?.qty}
                           <button
                             className="desCart"
                             onClick={() => dispatch(decreaseQty(item))}

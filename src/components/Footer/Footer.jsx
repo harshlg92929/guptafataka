@@ -9,7 +9,7 @@ const Footer = () => {
         <Row className="footer-row">
           <Col md={12} sm={12} className="box">
             <div className="logo">
-              <ion-icon name="bag"></ion-icon>
+              <ion-icon name="color-palette-outline"></ion-icon>
               <h1>Gupta Fataka Bhandar</h1>
             </div>
             <p>
@@ -22,9 +22,7 @@ const Footer = () => {
           <Col md={12} sm={12} className="box">
             <h2>Contact Us</h2>
             <ul>
-              <li>
-                
-                </li>
+              <li></li>
               <li>Phone: +91 9028677576</li>
               <li>Phone: +91 8208234064</li>
             </ul>

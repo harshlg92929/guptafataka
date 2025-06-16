@@ -50,11 +50,10 @@ const ProductCard = ({ title, productItem }) => {
             <span onClick={() => handelClick()}>
               Minimum Qty: {productItem.minQuantity}
             </span>
+            <h4>₹{productItem.price}</h4>
           </div>
           <div className="price">
-            <h4>₹{productItem.price}</h4>
-
-            <Col xs={12} sm={3} className="cartControl">
+            <Col xs={12} sm={12} md={12} className="cartControl">
               <button
                 // disabled={!isItemSelected}
                 className={isItemSelected ? "add" : "disabled"}
